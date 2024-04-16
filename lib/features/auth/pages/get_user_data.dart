@@ -27,7 +27,6 @@ class _GetUserDataState extends State<GetUserData> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("GetUserData Build");
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(

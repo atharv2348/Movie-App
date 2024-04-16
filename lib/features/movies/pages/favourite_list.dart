@@ -49,7 +49,6 @@ class FavouriteList extends StatelessWidget {
                           future: MovieServiceOmdbapi()
                               .getMoviesByIMDBid(IMDBids[index]),
                           builder: (context, snapshot) {
-                            print(snapshot.data);
                             if (snapshot.connectionState ==
                                 ConnectionState.done) {
                               return GestureDetector(

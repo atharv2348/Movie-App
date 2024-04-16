@@ -193,7 +193,6 @@ class _HomePageState extends ConsumerState<HomePage> {
   logout() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String>? favMovies = prefs.getStringList("favourites");
-    print(">>>>>>>>>>>>>>>> $favMovies");
     await FavouriteServices().addAllFavourites(favMovies!);
 
     prefs.remove('favourites');

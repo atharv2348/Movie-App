@@ -83,7 +83,6 @@ class VerifyEmail extends ConsumerWidget {
                           HapticFeedback.mediumImpact();
                           ref.read(loadingProvider.notifier).state = true;
                           String otp = ref.read(myOTPProvider);
-                          print("otp -> $otp");
                           bool isCorrect =
                               await authService.verifyOTP(userData.email!, otp);
                           if (isCorrect) {

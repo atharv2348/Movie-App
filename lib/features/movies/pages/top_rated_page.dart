@@ -21,7 +21,6 @@ class TopRatedPage extends ConsumerWidget {
           return ListView.builder(
             itemCount: snapshot.length,
             itemBuilder: (context, index) {
-              debugPrint("-----> " + snapshot[index]["rating"]);
               return GestureDetector(
                 onTap: () {
                   HapticFeedback.mediumImpact();

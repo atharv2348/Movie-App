@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../components/my_buttons.dart';
-import '../../../components/my_text_field.dart';
 import '../../../utils/validators.dart';
 import '../../movies/pages/home_page.dart';
 import '../services/auth_services.dart';
 
-final visiblePasswordProvider = StateProvider.autoDispose((ref) => false);
+final visiblePasswordProvider = StateProvider.autoDispose((ref) => true);
 
 class SigninPage extends StatefulWidget {
   const SigninPage({super.key, required this.onTap});
@@ -64,16 +62,6 @@ class _SigninPageState extends State<SigninPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      floatingActionButton: FloatingActionButton(onPressed: () async {
-        SharedPreferences prefs = await SharedPreferences.getInstance();
-        List<String>? movieIDs = prefs.getStringList("favourites");
-        // List<String> token = prefs.getStringList("token")!;
-        print(movieIDs);
-
-        print(emailController.text);
-        print(passwordController.text);
-        // print(token);
-      }),
       body: SafeArea(
         child: Center(
           child: Padding(
