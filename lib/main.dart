@@ -16,6 +16,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+  /// This function will fetch the token from local storage if it is present
+  /// else it will return false 
   Future<bool> fetchToken() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String token = sharedPreferences.get("token").toString();

@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AuthService {
   Dio dio = Dio();
 
-  //* login user
+  /// login user
 
   Future<void> loginUser(String email, String password) async {
     debugPrint("Login function is called");
@@ -30,7 +30,7 @@ class AuthService {
     }
   }
 
-  //* send OTP
+  /// send OTP
 
   Future<void> sendOTP(String email) async {
     debugPrint("Send OTP function is called");
@@ -48,7 +48,7 @@ class AuthService {
     }
   }
 
-  //* verify OTP
+  /// verify OTP
 
   Future<bool> verifyOTP(String email, String otp) async {
     debugPrint("Verify OTP function is called");
@@ -72,7 +72,7 @@ class AuthService {
     return false;
   }
 
-  //* register - creater new user
+  /// register - creater new user
 
   Future<int> createNewUser(UserModel user) async {
     debugPrint("CreateNewUser function is called");

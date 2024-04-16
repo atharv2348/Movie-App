@@ -69,6 +69,9 @@ class _SigninPageState extends State<SigninPage> {
         List<String>? movieIDs = prefs.getStringList("favourites");
         // List<String> token = prefs.getStringList("token")!;
         print(movieIDs);
+
+        print(emailController.text);
+        print(passwordController.text);
         // print(token);
       }),
       body: SafeArea(

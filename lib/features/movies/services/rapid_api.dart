@@ -5,17 +5,7 @@ import 'package:movie_app/utils/api.dart';
 class MovieServicesRapidAPI {
   Dio dio = Dio();
 
-  // Future<dynamic> getMoviesBySearch(String name) async {
-  //   debugPrint("getMoviesBySearch function is called");
-  //   Response response = await dio.get(
-  //       "${base_url_popular}v2/search?searchTerm=${name}&type=NAME&first=20",
-  //       options: Options(headers: {
-  //         "X-RapidAPI-Key": "004aa3fcbemsh2201930c338c58dp1e9642jsn0affd4c3906c"
-  //       }));
-  //   print(response);
-  //   return response.data;
-  // }
-
+  /// get popular movies
   Future<dynamic> getPopularMovies() async {
     debugPrint("getPopularMovies function is called");
     Response response = await dio.get("${base_url_popular}title/v2/get-popular",
@@ -26,6 +16,7 @@ class MovieServicesRapidAPI {
     return response.data;
   }
 
+  /// get top rated movies
   Future<dynamic> getTopRatedMovies() async {
     debugPrint("getTopRatedMovies function is called");
     Response response = await dio.get("${base_url_top_rated}",
@@ -35,19 +26,4 @@ class MovieServicesRapidAPI {
     print(response);
     return response.data;
   }
-
-  // Future<dynamic> getPopularMovies2() async {
-  //   debugPrint("getPopularMovies function is called");
-  //   Response response = await dio.get(
-  //       "https://api.themoviedb.org/3/movie/top_rated",
-  //       options: Options(
-  //           headers: {
-  //             "Authorization":
-  //                 "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZWRkMzEwOTlkMWEzNjY5OTRkMmM4MzZjNmI5ZTU0MiIsInN1YiI6IjY2MTY5NDQwZGMxY2I0MDE3YzFjNDFhNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NxtnmNkOu4ipTQFsj0YIebY82nXWiQTg5iaWFCBmWN8"
-  //           },
-  //           receiveTimeout: const Duration(minutes: 5),
-  //           sendTimeout: const Duration(minutes: 5)));
-  //   debugPrint(response.data);
-  //   return response.data;
-  // }
 }
