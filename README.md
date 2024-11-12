@@ -27,7 +27,8 @@ With features for browsing, searching, and viewing movie details. The app follow
 3. Run the app:
 
    ```bash
-   npm start
+   npx expo start --android # For Android
+   npx expo start --ios # For iOS
 
 ## Demo Video
 
